@@ -8,6 +8,15 @@
       "email": "anapluss@gmail.com",
       "is_admin": true,
       "id": 1
+    },
+    {
+      "firstName": "Anu",
+      "lastName": "Akin",
+      "userName": "anuakin",
+      "password": "secret",
+      "email": "anuakin@gmail.com",
+      "is_admin": false,
+      "id": 2
     }
   ],
   "jobs": [
