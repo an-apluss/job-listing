@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 1px 1px 1px 1px #ececec;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-right a {
+  text-decoration: none;
+  color: rgb(2, 168, 118);
+}
+
+.float-right a:nth-child(1), .float-right a:nth-child(2) {
+  margin-right: 10px;
+}
+
+
+.btn-view {
+  color: #fff;
+  background-color: rgb(2, 168, 118);
+  border-color: rgb(2, 168, 118);
+  position: relative;
+  top: 26px;
+}
+
+.btn-view:hover {
+  color: #fff;
+  background-color: rgb(0, 134, 93);
+  border-color: rgb(0, 134, 93);
+}
+
+footer {
+  background: #000000;
+  position: fixed;
+  padding: 20px;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+}
+
+.designer {
+  color: #ffffff;
+}
