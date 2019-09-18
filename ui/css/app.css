@@ -9,6 +9,15 @@ nav {
   box-shadow: 1px 1px 1px 1px #ececec;
 }
 
+
+.form-wrapper {
+  box-shadow: 1px 2px 2px 2px #cccccc;
+  width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 .float-right {
   float: right;
 }
@@ -20,6 +29,36 @@ nav {
 
 .float-right a:nth-child(1), .float-right a:nth-child(2) {
   margin-right: 10px;
+}
+
+form p {
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+label {
+  font-size: 14px;
+}
+
+input.user-input {
+  border: 1px solid #e2e2e2;
+  height: 1.3rem;
+}
+
+input[type="submit"] {
+  background: rgb(2, 168, 118);
+  padding: 5px;
+  color: #ffffff;
+  width: 50%;
+  border: none;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
 }
 
 
