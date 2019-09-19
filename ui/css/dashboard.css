@@ -1,0 +1,10 @@
+.btn-logout {
+  border: none;
+  background: none;
+  color: #02a876;
+  font-weight: 400;
+}
+
+footer {
+  position: relative;
+}

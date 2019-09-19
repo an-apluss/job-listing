@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <title>Dashboard</title>
+</head>
+
+<body>
+  <nav>
+    <span>logo</span>
+    <button class="float-right btn-logout" id="logout">Logout</button>
+  </nav>
+  <main>
+    <div class="container mt-2">
+      <div class="row mb-3">
+        <div class="col-md-12 px-0">
+          <button class="btn btn-view" id="job_registration_btn">Create Job</button>
+        </div>
+      </div>
+      <h6 id="toast" class="col-sm-10 offset-md-3 col-md-8 text-center"></h6>
+      <form id="createJobForm" class="mt-4 mb-5">
+        <div class="form-group row">
+          <label for="title" class="col-sm-2 col-md-1 offset-md-3 col-form-label">Job Title</label>
+          <div class="col-sm-10 col-md-6">
+            <input type="text" class="form-control" id="title" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="job_type" class="col-sm-2 col-md-1 offset-md-3 col-form-label">Job Type</label>
+          <div class="col-sm-10 col-md-6">
+            <select class="custom-select my-1 mr-sm-2" id="job_type">
+              <option value="1">Part Time</option>
+              <option value="2">Full Time</option>
+              <option value="3">Contract</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="description" class="col-sm-2 col-md-1 offset-md-3 col-form-label">Description</label>
+          <div class="col-sm-10 col-md-6">
+            <textarea class="form-control" id="description" rows="3" required></textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="industry" class="col-sm-2 col-md-1 offset-md-3 col-form-label">Industry</label>
+          <div class="col-sm-10 col-md-6">
+            <select class="custom-select my-1 mr-sm-2" id="industry">
+              <option value="1">IT & Software Development</option>
+              <option value="2">Education</option>
+              <option value="3">Entertainment</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="company" class="col-sm-2 col-md-1 offset-md-3 col-form-label">Company</label>
+          <div class="col-sm-10 col-md-6">
+            <input type="text" class="form-control" id="company" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="location" class="col-sm-2 col-md-1 offset-md-3 col-form-label">Location</label>
+          <div class="col-sm-10 col-md-6">
+            <input type="text" class="form-control" id="location" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="amount" class="col-sm-2 col-md-1 offset-md-3 col-form-label">Salary</label>
+          <div class="col-sm-10 col-md-6">
+            <input type="text" class="form-control" id="amount" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-10 col-md-6 offset-md-3">
+            <input type="submit" class="btn btn-view" value="Create Job">
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <span class="designer">Designed by An'Apluss</span>
+  </footer>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+
+</html>
