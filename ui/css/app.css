@@ -88,3 +88,22 @@ footer {
 .designer {
   color: #ffffff;
 }
+
+#toast {
+  visibility: hidden;
+  padding: 10px 0;
+  margin-top: 35px;
+  color: #fff;
+}
+
+.error {
+  visibility: visible !important;
+  background: #da7373;
+  border: 1px solid #ff0000;
+}
+
+.success {
+  visibility: visible !important;
+  background: #9de49d;
+  border: 1px solid #238223;
+}
