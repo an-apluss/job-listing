@@ -20,7 +20,7 @@
   "jobs": [
     {
       "posted_date": "2019/09/17",
-      "job_type": "full time",
+      "job_type": "Full Time",
       "amount": "250000",
       "location": "Abuja",
       "industry": "IT & Software",
@@ -32,7 +32,7 @@
     },
     {
       "posted_date": "2019/09/17",
-      "job_type": "full time",
+      "job_type": "Full Time",
       "amount": "250000",
       "location": "Abuja",
       "industry": "IT & Software",
@@ -44,7 +44,7 @@
     },
     {
       "posted_date": "2019/09/17",
-      "job_type": "full time",
+      "job_type": "Full Time",
       "amount": "250000",
       "location": "Abuja",
       "industry": "IT & Software",
@@ -56,11 +56,11 @@
     },
     {
       "posted_date": "2019/09/17",
-      "job_type": "full time",
+      "job_type": "Full Time",
       "amount": "250000",
-      "location": "Abuja",
+      "location": "Lagos",
       "industry": "IT & Software",
-      "company": "SKY FIRM TRAVELS",
+      "company": "Andela",
       "title": "Graphics and Web Development",
       "description": "We are looking for a talented and motivated Web developer with an eye for design and advanced knowledge of user experience. The ideal candidate wants to gain a deep understanding of the company's customer base in order to grow and improve our brand. The candidate must live in Abuja and be a team player who can work with a lively group of overachievers in a highly collaborative environment. They will teach themselves, learn from others, and take ownership of their successes and challenges. They should have an intrinsic desire for personal growth and professional success, and must proactively learn about the company’s industry, business verticals, and marketing strategies. They will work closely with our marketing, development and customer service teams to execute design strategies across multiple projects and initiatives. The ideal candidate has extensive experience developing custom WordPress themes and plugins. Additional skills include designing user interfaces and developing with HTML CSS and JavaScript. They should be willing to grow their design expertise, while maintaining their WordPress and front-end knowledge. Projects include both customer-facing and internal WordPress/Web development, as well as User Interface design and development.",
       "posted_by": 1,
