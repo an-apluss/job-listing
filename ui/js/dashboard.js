@@ -52,6 +52,59 @@ $('document').ready(function() {
         });
       }
     });
+
+    $.ajax({
+      url: 'http://localhost:3000/jobs',
+      method: 'GET',
+      success: function(job_listing) {
+        if (job_listing.length) {
+          for (let job_detail of job_listing) {
+            $('#job_listing_summary').append(
+              `
+              <tr id="job_record_${job_detail.id}">
+                <th scope="row">${job_detail.id}</th>
+                <td>${job_detail.title}</td>
+                <td>${job_detail.company}</td>
+                <td><button class="delete btn btn-danger" data-id="${job_detail.id}">Delete</button></td>
+              </tr>
+              `
+            )
+          }
+        }
+      }
+    });
+
+    $('#job_listing_btn').on('click', function(event) {
+      event.preventDefault();
+      $('#createJobForm').fadeOut();
+      $('#job_listing_table').fadeIn();
+    });
+  
+    $('#job_registration_btn').on('click', function(event) {
+      $('#job_listing_table').fadeOut();
+      $('#createJobForm').fadeIn();
+    });
+    
+    $(document).on('click', '.delete', function(){
+      const currentTag = `#job_record_${$(this).data('id')}`;
+      const jobId = $(this).data('id');
+      
+      $.ajax({
+        url: `http://localhost:3000/jobs/${jobId}`,
+        type: 'DELETE',
+        success: function(response) {
+          $(currentTag).remove();
+          toast.removeClass('error');
+          toast.text('Job successfully deleted');
+          toast.addClass('success');
+
+          setTimeout(function() {
+            toast.removeClass('success');
+          }, 5000);
+        }
+      })
+    })
+
   }else{
     window.location.href = 'signin.html';
   }
@@ -65,5 +118,5 @@ $('document').ready(function() {
       window.location.href = 'signin.html';
     }
   });
-
+  
 });
