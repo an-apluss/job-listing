@@ -65,7 +65,7 @@ $('document').ready(function() {
                 <th scope="row">${job_detail.id}</th>
                 <td>${job_detail.title}</td>
                 <td>${job_detail.company}</td>
-                <td><button class="delete btn btn-danger" data-id="${job_detail.id}">Delete</button></td>
+                <td><button class="edit btn btn-light mr-3" data-id="${job_detail.id}">Update</button><button class="delete btn btn-danger" data-id="${job_detail.id}">Delete</button></td>
               </tr>
               `
             )
@@ -76,14 +76,17 @@ $('document').ready(function() {
 
     $('#job_listing_btn').on('click', function(event) {
       event.preventDefault();
+      $('#editJobForm').fadeOut();
       $('#createJobForm').fadeOut();
       $('#job_listing_table').fadeIn();
     });
   
     $('#job_registration_btn').on('click', function(event) {
+      $('#editJobForm').fadeOut();
       $('#job_listing_table').fadeOut();
       $('#createJobForm').fadeIn();
     });
+
     
     $(document).on('click', '.delete', function(){
       const currentTag = `#job_record_${$(this).data('id')}`;
@@ -105,6 +108,67 @@ $('document').ready(function() {
       })
     })
 
+    $(document).on('click', '.edit', function(event) {
+      $('#createJobForm').fadeOut();
+      $('#job_listing_table').fadeOut();
+      $('#editJobForm').fadeIn();
+
+      const jobId = $(this).data('id');
+
+      $.ajax({
+        url: `http://localhost:3000/jobs/${jobId}`,
+        method: 'GET',
+        success: function(response) {
+          $('#title_u').val(response.title),
+          $('#description_u').val(response.description),
+          $('#job_type_u option:selected').text(response.job_type),
+          $('#industry_u option:selected').text(response.industry),
+          $('#company_u').val(response.company),
+          $('#amount_u').val(response.amount),
+          $('#location_u').val(response.location);
+          $('#job_id').val(response.id)
+        }
+      })
+    });
+
+    $('#editJobForm').submit(function(event) {
+      event.preventDefault();
+      const jobId = $('#job_id').val();
+      const title = $('#title_u').val(),
+        description = $('#description_u').val(),
+        job_type = $('#job_type_u option:selected').text(),
+        industry = $('#industry_u option:selected').text(),
+        company = $('#company_u').val(),
+        amount = $('#amount_u').val(),
+        location = $('#location_u').val();
+
+      const formData = {
+        title, 
+        description,
+        company, 
+        job_type, 
+        industry, 
+        amount, 
+        location,
+      }
+      
+      $.ajax({
+        url: `http://localhost:3000/jobs/${jobId}`,
+        method: 'PATCH',
+        data: formData,
+        success: function(response) {
+          
+          toast.removeClass('error');
+          toast.text('Job successfully updated');
+          toast.addClass('success');
+
+          setTimeout(function() {
+            toast.removeClass('success');
+          }, 5000);
+        }
+      });
+
+    });
   }else{
     window.location.href = 'signin.html';
   }
