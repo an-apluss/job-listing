@@ -1,6 +1,6 @@
 function truncateString(string, numberOfCharacter) {
   if (string.length <= numberOfCharacter) return string;
-  return string.slice(0, numberOfCharacter + 1);
+  return `${string.slice(0, numberOfCharacter + 1)}...`;
 }
 
 $(document).ready(function() {
@@ -20,7 +20,7 @@ $(document).ready(function() {
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">${job_detail.title}</h4>
-                  <p class="card-text">${truncateString(job_detail.description, 90)}...</p>
+                  <p class="card-text">${truncateString(job_detail.description, 90)}</p>
                   <p class="card-text">
                     <span>&#35;</span><span class="price">${job_detail.amount}</span>
                     <span class="date">${job_detail.posted_date}</span>

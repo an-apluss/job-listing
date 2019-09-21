@@ -1,3 +1,25 @@
+function getJobListing() {
+  $.ajax({
+    url: 'http://localhost:3000/jobs',
+    method: 'GET',
+    success: function(job_listing) {
+      if (job_listing.length) {
+        for (let job_detail of job_listing) {
+          $('#job_listing_summary').append(
+            `
+            <tr id="job_record_${job_detail.id}">
+              <th scope="row">${job_detail.id}</th>
+              <td>${job_detail.title}</td>
+              <td>${job_detail.company}</td>
+              <td><button class="edit btn btn-light mr-3" data-id="${job_detail.id}">Update</button><button class="delete btn btn-danger" data-id="${job_detail.id}">Delete</button></td>
+            </tr>
+            `
+          )
+        }
+      }
+    }
+  });
+}
 $('document').ready(function() {
   let userData = JSON.parse(localStorage.getItem('jsonServerUser'));
   if (localStorage && userData && userData.is_admin) {
@@ -42,6 +64,11 @@ $('document').ready(function() {
             dataType: 'json',
             success: function(response) {
               toast.removeClass('error');
+              $('#job_listing_summary').empty();
+              getJobListing();
+              $('#editJobForm').fadeOut();
+              $('#createJobForm').fadeOut();
+              $('#job_listing_table').fadeIn();
               toast.text('Job successfully created');
               toast.addClass('success');
 
@@ -53,26 +80,7 @@ $('document').ready(function() {
       }
     });
 
-    $.ajax({
-      url: 'http://localhost:3000/jobs',
-      method: 'GET',
-      success: function(job_listing) {
-        if (job_listing.length) {
-          for (let job_detail of job_listing) {
-            $('#job_listing_summary').append(
-              `
-              <tr id="job_record_${job_detail.id}">
-                <th scope="row">${job_detail.id}</th>
-                <td>${job_detail.title}</td>
-                <td>${job_detail.company}</td>
-                <td><button class="edit btn btn-light mr-3" data-id="${job_detail.id}">Update</button><button class="delete btn btn-danger" data-id="${job_detail.id}">Delete</button></td>
-              </tr>
-              `
-            )
-          }
-        }
-      }
-    });
+    getJobListing();
 
     $('#job_listing_btn').on('click', function(event) {
       event.preventDefault();
@@ -159,6 +167,11 @@ $('document').ready(function() {
         success: function(response) {
           
           toast.removeClass('error');
+          $('#job_listing_summary').empty();
+          getJobListing();
+          $('#editJobForm').fadeOut();
+          $('#createJobForm').fadeOut();
+          $('#job_listing_table').fadeIn();
           toast.text('Job successfully updated');
           toast.addClass('success');
 
