@@ -1,6 +1,7 @@
 # Job Listing
 
 ### Project Description
+
 * A web Application to display available job for applicant.
 
 ## Getting Started
@@ -13,11 +14,12 @@
 - Inside the project directory run `json-server --watch db.json` to start the json-server
 
 ### Features
-Admin creates a Job listing.
-User can read all Job listing created.
-User can read a single Job listing.
-Admin can update a Job listing.
-Admin can delete a Job Listing.
+
+- Admin creates a Job listing.
+- User can read all Job listing created.
+- User can read a single Job listing.
+- Admin can update a Job listing.
+- Admin can delete a Job Listing.
 
 ## Built With
 
